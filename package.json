@@ -1,0 +1,41 @@
+{
+  "name": "tpm",
+  "version": "1.0.0",
+  "private": true,
+  "main": "main.js",
+  "scripts": {
+    "app": "node ./bin/www",
+    "appdebug": "DEBUG=express:* ./bin/www",
+    "electron": "electron main.js",
+    "build:mac": "electron-packager ./ helloworld --platform=darwin --arch=x64 --overwrite --out ../OutApp --version=0.37.8",
+    "build:win64": "electron-packager ./ WeFlow --platform=win32 --arch=x64 --icon=./assets/img/WeFlow.png --overwrite --out ./dist --version=0.37.8",
+    "build:win32": "electron-packager ./ WeFlow --platform=win32 --arch=ia32 --icon=./assets/img/WeFlow.png --overwrite --out ./dist --version=0.37.8 --app-version=1.0.0",
+    "package": "electron-packager ./ helloworld --all --out ./OutApp --version 1.4.0 --overwrite"
+  },
+  "dependencies": {
+    "body-parser": "~1.15.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "ejs": "^2.5.3",
+    "electron-prebuilt": "^1.4.13",
+    "express": "~4.14.0",
+    "express-session": "^1.15.1",
+    "generic-pool": "^3.1.7",
+    "jade": "~1.11.0",
+    "jquery": "^3.1.1",
+    "log4js": "^1.1.1",
+    "md5": "^2.2.1",
+    "moment": "^2.17.1",
+    "morgan": "~1.7.0",
+    "multer": "^1.3.0",
+    "mysql": "^2.13.0",
+    "node-uuid": "^1.4.7",
+    "node-xlsx": "^0.7.4",
+    "serve-favicon": "~2.3.0",
+    "underscore": "^1.8.3",
+    "vue": "^2.2.2"
+  },
+  "devDependencies": {
+    "electron-packager": "^8.5.2"
+  }
+}

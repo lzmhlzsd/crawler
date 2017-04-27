@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<style tyle="text/css">
+    html,
+    body {
+        height: 100%;
+        overflow: hidden;
+    }
+    
+    * {
+        font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    }
+</style>
+
+<body>
+    <div id="info"></div>
+    <div class="logs"></div>
+    <script>
+        window.$ = window.jQuery = require( __dirname + '/node_modules/jquery/dist/jquery.min.js' );
+    </script>
+    <script type="text/javascript">
+        // var fs = require( 'fs' );
+        // var file = fs.readFileSync( 'package.json' );
+        // document.write( file );
+
+        // const ipcRenderer = require( 'electron' ).ipcRenderer;
+        // ipcRenderer.on( 'asynchronous-reply', function ( event, arg ) {
+        //     console.log( arg ); // prints "pong"
+        // } );
+
+        const ipcRenderer = require( 'electron' ).ipcRenderer
+        ipcRenderer.on( 'ping', ( event, arg ) => {
+            console.log( arg ) // prints "pong"
+        } )
+
+        $( function () {
+            // var process = require( 'child_process' );
+            // var n = process.fork( './bin/www' );
+            // process.exec( 'node ./bin/www',
+            //     function ( error, stdout, stderr ) {
+            //         console.log( 123 )
+            //         if ( error !== null ) {
+            //             console.log( 'exec error: ' + error );
+            //             $( '#info' ).html( error.toString() )
+            //         }
+            //     } )
+            $( '#info' ).html( '服务启动......' )
+        } );
+    </script>
+</body>
+
+</html>
