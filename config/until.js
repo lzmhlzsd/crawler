@@ -16,14 +16,14 @@ module.exports = {
             client.query( sql, params, function ( err, result ) {
                 //console.log( err );
                 if ( err ) {
-                    let einfo = _.extend( errinfo, { err: err } );
+                    var einfo = _.extend( errinfo, { err: err } );
                     logger.info( '*********\n时间:%s\n方法名:%s\n参数:%s\n路径:%s\n错误信息:%s\nSQL:%s\n',
                         moment().format( 'YYYY-MM-DD HH:mm:ss.SSS' ),
                         einfo.method, JSON.stringify( einfo.params ), einfo.path, einfo.err.toString(),
                         sql
                     )
                 }
-                let einfo = _.extend( errinfo, { err: '' } );
+                var einfo = _.extend( errinfo, { err: '' } );
                 logger.debug( '*********\n时间:%s\n方法名:%s\n参数:%s\n路径:%s\n错误信息:%s\nSQL:%s\n',
                         moment().format( 'YYYY-MM-DD HH:mm:ss.SSS' ),
                         einfo.method, JSON.stringify( einfo.params ), einfo.path, einfo.err.toString(),
